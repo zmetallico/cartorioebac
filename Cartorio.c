@@ -12,7 +12,8 @@ int reg() //função de registro
 	char nome[40];
 	char sobrenome[40];
 	char cargo[40];
-	
+	char escolha;
+		
 	printf("Digite o CPF a ser cadastrado: ");
 	scanf("%s",cpf);
 	
@@ -56,6 +57,22 @@ int reg() //função de registro
 	fprintf(file,cargo);
 	fclose(file);	
 	
+	printf("Deseja registrar outro nome?(s/n)\n");
+	scanf(" %c",&escolha);
+	
+	system("cls");
+	
+	if (escolha == 's')
+	reg();
+	
+	else
+	if (escolha == 'n')
+	main();
+		
+	else
+    printf ("Opção indisponível, retornando ao menu principal!\n");	
+	
+	
 	system("pause");
 	
 			
@@ -68,6 +85,7 @@ int cons() //função de consulta
 	char cpf[40];
 	char conteudo[200];
 	char *token;
+	char escolha;
 	
 	printf("Digite o CPF a ser consultado: ");
 	scanf("%s",cpf);
@@ -97,6 +115,21 @@ int cons() //função de consulta
 		printf("Cargo: %s\n",token);
 		
 		printf("\n\n");
+		
+	printf("Deseja consultar outro nome?(s/n)\n");
+	scanf(" %c",&escolha);
+	
+	system("cls");
+	
+	if (escolha == 's')
+	cons();
+	
+	else
+	if (escolha == 'n')
+	main();
+		
+	else
+    printf ("Opção indisponível, retornando ao menu principal!\n");
 	}
 	system("pause");
 }
@@ -106,6 +139,7 @@ int del() //função de deletar
 	setlocale(LC_ALL,"Portuguese"); //Definindo a linguágem
 	
 	char cpf[40];
+	char escolha;
 	
 	printf("Digite o CPF do usuário a ser deletado: ");
 	scanf("%s",cpf);
@@ -124,6 +158,22 @@ int del() //função de deletar
 		printf("Usuário removido com sucesso! \n");
 		system("pause");
 	}
+	
+		printf("Deseja deletar outro nome?(s/n)\n");
+	scanf(" %c",&escolha);
+	
+	system("cls");
+	
+	if (escolha == 's')
+	del();
+	
+	else
+	if (escolha == 'n')
+	main();
+		
+	else
+    printf ("Opção indisponível, retornando ao menu principal!\n");
+	
 }
 
 int main()
